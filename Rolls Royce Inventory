@@ -1,0 +1,74 @@
+class RollsRoyceInventory:
+    def __init__(self):
+        # Inventory Dictionary
+        self.RR = {
+            "Phantom": {
+                "Total production in 2023": "1200 units",
+                "Total sales": "1196 units",
+                "Total profit": "$133.33 billion",
+                "Ratings": "5/5",
+            },
+            "Cullinan": {
+                "Total production in 2023": "687 units",
+                "Total sales": "670 units",
+                "Total profit": "$61.49 billion",
+                "Ratings": "5/5",
+            },
+            "Ghost": {
+                "Total production in 2023": "350 units",
+                "Total sales": "327 units",
+                "Total profit": "$31.57 billion",
+                "Ratings": "5/5",
+            },
+            "Spectre": {
+                "Total production in 2023": "800 units",
+                "Total sales": "746 units",
+                "Total profit": "$72.18 billion",
+                "Ratings": "5/5",
+            },
+            "Dawn": {
+                "Total production in 2023": "505 units",
+                "Total sales": "500 units",
+                "Total profit": "$45.56 billion",
+                "Ratings": "5/5",
+            },
+            "One-off": {
+                "Total production": "Starts in 2025",
+                "Sales": "Per booking only",
+                "Total booking": "376 units",
+                "Price": "$15 Million",
+                "Ratings": "N/A",
+            },
+            "Droptail": {
+                "Total production": "Starts in 2025",
+                "Sales": "Per booking only",
+                "Total booking": "164 units",
+                "Price": "$28 Million",
+                "Ratings": "N/A",
+            }
+        }
+    
+    def get_model_info(self, model_name):
+        """
+        Retrieves the information for a given Rolls-Royce model.
+        """
+        try:
+            if model_name in self.RR:
+                car_info = self.RR[model_name]
+                print(f"\nDetails for {model_name}:")
+                # If it is, retrieves and prints the details of that model.
+                for key, value in car_info.items():
+                    print(f"{key}: {value}")
+            else:
+                print(f"Error: The model '{model_name}' is not in the inventory.")
+        except KeyError as e:
+            print(f"KeyError: {e} not found.")
+        
+ # Ask user for input
+# Check if the user input exists in the dictionary and display its details
+
+if __name__ == "__main__":
+    inventory = RollsRoyceInventory()
+    # Prompts the user to enter the name of a Rolls-Royce model.
+    user_input = input("Available Rolls-Royce models (Phantom, Cullinan, Ghost, Spectre, Dawn, One-off, Droptail): ")
+    inventory.get_model_info(user_input)
